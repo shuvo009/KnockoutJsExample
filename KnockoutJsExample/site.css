@@ -1,0 +1,47 @@
+﻿#ImageDiv {
+    width: 80px;
+    height: 80px;
+     float: left;
+    margin: 0;
+}
+
+#SkuInfo {
+    margin-top: 4px;
+    margin-left: 5px;
+    margin: 0;
+   float: left;
+}
+
+#SkuInfo span {
+    margin: 0;
+    font-size: 15px;
+}
+
+.MainContinar {
+    clear: both;
+}
+
+#listContener {
+    width: 150px;
+    height: 150px;
+    overflow: auto;
+    float: left;
+}
+
+#ProductInfo {
+    float: left;
+    margin-left: 20px;
+}
+
+.MouseOverStyle {
+    opacity: 0.85;
+    cursor:pointer;
+}
+
+#ButtonContainer {
+    clear: both;
+    float: left;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+

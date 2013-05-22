@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <link href="site.css" rel="stylesheet" />
+
+    <div id="listContener" data-bind="template: { name: 'productInList', foreach: productCollection }"></div>
+
+    <div id="ProductInfo" data-bind="with: selectedProduct">
+        <img id="preview" height="100px" width="100px" data-bind="attr: { src: image }" />
+        <br />
+        <label>
+            SKU :
+                <input type="text" data-bind="value: sku" /></label>
+        <label>
+            <br />
+            Description :
+            <input type="text" data-bind="value: description" />
+        </label>
+        <br />
+        <label>
+            Price :
+                <input type="text" data-bind="value: price" /></label>
+        <br />
+        <label>
+            Cost :
+                <input type="text" data-bind="value: cost" /></label>
+        <br />
+        <label>
+            Quantity :
+                <input type="text" data-bind="value: quantity" /></label>
+        <br />
+    </div>
+
+    <div id="ButtonContainer">
+        <button type="button" data-bind="click: AddProduct">Add</button>
+        <button type="button" data-bind="click: SaveProduct">Save</button>
+        <button type="button" data-bind="click: UpdateProduct, enable: IsDeleteOrUpdateAble">Update</button>
+        <button type="button" data-bind="click: RemoveProduct, enable: IsDeleteOrUpdateAble">Remove</button>
+        <button type="button" data-bind="click: SortBySku">Sort</button>
+    </div>
+    
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/knockout.mapping-latest.js"></script>
+    <script src="MyScripts/Model.js"></script>
+
+    <script type="text/html" id="productInList">
+        <div class="MainContinar">
+            <div id="ImageDiv">
+                <img width="70" height="70" data-bind="attr: { src: image }"></img>
+            </div>
+            <div id="SkuInfo">
+                <span data-bind="text: sku"></span>
+                <br />
+                <span data-bind="text: productSummary()"></span>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        var app = new koExample.App();
+        app.run();
+
+        $('.MainContinar').hover(function () {
+            $(this).addClass("MouseOverStyle");
+        }, function () {
+            $(this).removeClass("MouseOverStyle");
+        });
+    </script>
+</body>
+</html>
